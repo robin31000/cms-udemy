@@ -47,6 +47,19 @@
                                 <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                             </div>
                         </form>
+                        
+                                                                
+                                                                                                        
+
+                        <?php
+                        
+                            if(isset($_GET["edit"])){
+                                $cat_id = $_GET["edit"];
+                                
+                                include "includes/update_categories.php";
+                            }
+                        
+                        ?>                                        
                     </div>
                     
                     
@@ -71,6 +84,7 @@
                                                 <td><?php echo $cat_id?></td>
                                                 <td><?php echo $cat_title?></td>
                                                 <?php echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>"?>
+                                                <?php echo "<td><a href='categories.php?edit={$cat_id}'>Edit</a></td>"?>
                                             </tr>
                                     <?php   }?>
                                     
