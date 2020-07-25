@@ -75,6 +75,12 @@
                 if(!$create_comment_query){
                     die('QUERY FAILED' . mysqli_error($connection));
                 }
+                
+                $query = "UPDATE posts SET post_comment_counts = post_comment_counts + 1 WHERE post_id = '{$the_post_id}'";
+                $increment_post_comments_query = mysqli_query($connection, $query);
+                if(!$increment_post_comments_query){
+                    die('QUERY FAILED' . mysqli_error($connection));
+                }
             }
             
             ?>
